@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090a12" />
+    <meta name="description" content="GameZone — your next favorite game is one click away." />
+    <title>GameZone — Play. Compete. Have Fun!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="loader" id="loader"><span class="loader-mark">G</span><span>Loading your arcade<span class="loading-dots">...</span></span></div>
+    <div class="app-shell" id="app">
+      <header class="topbar">
+        <a class="brand" href="#" data-home><span class="brand-icon">G</span><span>game<span>zone</span></span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="#home" data-nav="home">Home</a>
+          <a class="nav-link" href="#games" data-nav="games">All Games</a>
+          <a class="nav-link" href="#categories" data-nav="categories">Categories</a>
+          <a class="nav-link" href="#leaderboard" data-nav="leaderboard">Leaderboard</a>
+          <a class="nav-link" href="#about" data-nav="about">About</a>
+        </nav>
+        <div class="top-actions">
+          <button class="icon-button" id="sound-toggle" aria-label="Toggle sound" title="Toggle sound">♫</button>
+          <button class="icon-button" id="theme-toggle" aria-label="Toggle light mode" title="Toggle theme">☼</button>
+          <button class="profile-button"><span class="profile-avatar">P</span><span>Player</span><span class="profile-chevron">⌄</span></button>
+        </div>
+        <button class="mobile-menu icon-button" id="mobile-menu" aria-label="Toggle menu">☰</button>
+      </header>
+
+      <main id="home">
+        <section class="hero content-width">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="live-dot"></span> YOUR NEXT FAVORITE GAME IS HERE</div>
+            <h1>Play. Compete.<br /><span>Have fun!</span></h1>
+            <p>Good games. Good vibes. No downloads needed.<br />Pick a game and let the fun begin.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#games" data-nav="games">Explore games <span>↗</span></a>
+              <a class="button button-quiet" href="#leaderboard" data-nav="leaderboard"><span class="trophy">♛</span> View leaderboard</a>
+            </div>
+            <div class="hero-note"><span class="avatars"><i>🎮</i><i>🕹️</i><i>👾</i></span><span><b>12 games</b> and counting <span class="note-separator">·</span> Always free to play</span></div>
+          </div>
+          <div class="hero-art" aria-label="Colorful arcade game illustration">
+            <div class="art-glow"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-spark spark-one">✦</div><div class="art-spark spark-two">✧</div>
+            <div class="art-controller"><div class="controller-top"><span class="controller-light"></span><span class="controller-light"></span><span class="controller-light"></span></div><div class="dpad"><i></i><b></b></div><div class="controller-buttons"><i>●</i><b>●</b></div><div class="controller-center"><span></span><span></span></div></div>
+            <div class="float-card float-card-one"><span>🏆</span><div><b>New high score!</b><small>You're on fire</small></div></div>
+            <div class="float-card float-card-two"><span>⚡</span><div><b>Ready, player 1?</b><small>Let's play something</small></div></div>
+            <div class="art-pixel pixel-one"></div><div class="art-pixel pixel-two"></div><div class="art-pixel pixel-three"></div>
+          </div>
+        </section>
+
+        <section class="content-width stats-strip" aria-label="Arcade stats">
+          <div class="stat"><span class="stat-icon purple">◈</span><div><strong>12</strong><small>Free games</small></div></div>
+          <span class="stat-divider"></span><div class="stat"><span class="stat-icon green">♙</span><div><strong>100%</strong><small>Browser based</small></div></div>
+          <span class="stat-divider"></span><div class="stat"><span class="stat-icon orange">♛</span><div><strong id="player-best">0</strong><small>Your top score</small></div></div>
+          <span class="stat-divider"></span><div class="stat"><span class="stat-icon blue">♡</span><div><strong id="favorite-count">0</strong><small>Saved favorites</small></div></div>
+        </section>
+
+        <section class="content-width section-block" id="games">
+          <div class="section-heading">
+            <div><div class="section-kicker">PICK YOUR PLAY</div><h2>Popular games <span class="heading-dot">.</span></h2></div>
+            <div class="game-tools"><label class="search-box"><span>⌕</span><input id="game-search" type="search" placeholder="Search games..." autocomplete="off" /><kbd>⌘ K</kbd></label><button class="text-link" id="view-all">View all games <span>→</span></button></div>
+          </div>
+          <div class="filter-row" id="categories">
+            <div class="filter-tabs" role="group" aria-label="Filter games"><button class="filter-tab active" data-filter="All">All games <span>12</span></button><button class="filter-tab" data-filter="Arcade">Arcade</button><button class="filter-tab" data-filter="Puzzle">Puzzle</button><button class="filter-tab" data-filter="Strategy">Strategy</button><button class="filter-tab" data-filter="Casual">Casual</button></div>
+            <button class="favorites-filter" id="favorites-filter">♡ <span>Favorites</span></button>
+          </div>
+          <div class="games-grid" id="games-grid"></div>
+          <div class="empty-state hidden" id="empty-state"><span>◌</span><h3>No games found</h3><p>Try another search or category.</p></div>
+        </section>
+
+        <section class="content-width feature-band">
+          <div class="feature-copy"><div class="section-kicker">THE FEATURED PICK</div><h2>A little strategy.<br /><span>A lot of fun.</span></h2><p>Take a break, challenge your brain, and find your new go-to game. Your next high score is just around the corner.</p><button class="button button-primary" data-launch="2048">Play 2048 <span>↗</span></button></div>
+          <div class="feature-tiles" aria-hidden="true"><div class="feature-tile tile-purple">2</div><div class="feature-tile tile-blue">4</div><div class="feature-tile tile-pink">8</div><div class="feature-tile tile-green">16</div><div class="feature-tile tile-orange">32</div><div class="feature-tile tile-indigo">64</div><div class="feature-tile tile-blank"></div><div class="feature-tile tile-cyan">128</div><div class="feature-tile tile-lavender">256</div></div>
+        </section>
+
+        <section class="content-width lower-grid">
+          <div class="recent-panel">
+            <div class="section-heading compact"><div><div class="section-kicker">FRESH FROM THE ARCADE</div><h2>Recently added</h2></div><span class="new-badge"><i></i> JUST DROPPED</span></div>
+            <div class="recent-list" id="recent-games"></div>
+          </div>
+          <div class="leaderboard-panel" id="leaderboard">
+            <div class="section-heading compact"><div><div class="section-kicker">TOP OF THE BOARD</div><h2>Leaderboard</h2></div><span class="leader-icon">♛</span></div>
+            <div class="leaderboard-content" id="leaderboard-content"></div>
+          </div>
+        </section>
+
+        <section class="content-width about-strip" id="about"><div class="about-symbol">G<span>✦</span></div><div><div class="section-kicker">WELCOME TO YOUR ARCADE</div><h2>Good games. No downloads. <span>Just play.</span></h2><p>GameZone is your cozy corner of the internet for quick breaks, friendly challenges, and a little bit of pixel-powered joy.</p></div><div class="about-perks"><span>✦  Always free</span><span>◈  No installs</span><span>♡  Play anywhere</span></div></section>
+      </main>
+      <footer class="footer content-width"><a class="brand footer-brand" href="#" data-home><span class="brand-icon">G</span><span>game<span>zone</span></span></a><span>Made for fun, played by everyone. <b>♥</b></span><span>© 2025 GameZone</span></footer>
+    </div>
+
+    <div class="game-overlay hidden" id="game-overlay" role="dialog" aria-modal="true" aria-labelledby="game-title">
+      <div class="game-shell">
+        <header class="game-topbar"><button class="back-button" id="back-home">← <span>Back to arcade</span></button><div class="game-brand"><span class="brand-icon">G</span><span>game<span>zone</span></span></div><button class="icon-button" id="game-sound" aria-label="Toggle sound">♫</button></header>
+        <div class="game-layout">
+          <aside class="game-sidebar"><div class="game-label">NOW PLAYING</div><h1 id="game-title">Game name</h1><p class="game-description" id="game-description"></p><div class="side-divider"></div><div class="score-card"><span>YOUR SCORE</span><strong id="game-score">0</strong><small id="game-best">BEST: 0</small></div><div class="game-controls"><button class="button button-primary control-button" id="restart-game">↻ <span>Restart game</span></button><button class="button button-secondary control-button" id="pause-game">Ⅱ <span>Pause game</span></button></div><div class="instructions"><span class="instruction-icon">ⓘ</span><div><b>How to play</b><p id="game-instructions"></p></div></div><div class="side-tip"><span>✦</span> Have fun &amp; beat your best!</div></aside>
+          <section class="play-area"><div class="play-area-top"><span class="playing-pill"><i></i> GAME IN PROGRESS</span><button class="game-favorite" id="game-favorite">♡ <span>Favorite</span></button></div><div class="game-stage" id="game-stage"></div><div class="game-over hidden" id="game-over"><span class="game-over-icon">✦</span><h2 id="game-over-title">Nice play!</h2><p id="game-over-message"></p><button class="button button-primary" id="play-again">Play again <span>↻</span></button></div><div class="pause-overlay hidden" id="pause-overlay"><span>Ⅱ</span><h2>Paused</h2><p>Take your time. Your game is waiting.</p><button class="button button-primary" id="resume-game">Resume game</button></div></section>
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
