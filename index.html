@@ -24,9 +24,25 @@
           <a class="nav-link" href="#about" data-nav="about">About</a>
         </nav>
         <div class="top-actions">
-          <button class="icon-button" id="sound-toggle" aria-label="Toggle sound" title="Toggle sound">♫</button>
+          <div class="music-player">
+            <button class="icon-button" id="music-toggle" aria-label="Open music player" title="Open music player" aria-expanded="false">♫</button>
+            <section class="music-panel hidden" id="music-panel" aria-label="Music player">
+              <div class="music-panel-heading"><div><b>Arcade radio</b><small id="music-status" aria-live="polite">Choose a track to play</small></div><button class="music-close" id="music-close" aria-label="Close music player">×</button></div>
+              <div class="music-track-list">
+                <button class="music-track" data-track="0"><span>01</span><b>Pixel Sunrise</b><i>▶</i></button>
+                <button class="music-track" data-track="1"><span>02</span><b>Neon Runner</b><i>▶</i></button>
+                <button class="music-track" data-track="2"><span>03</span><b>Bonus Round</b><i>▶</i></button>
+                <button class="music-track" data-track="3"><span>04</span><b>Star Hopper</b><i>▶</i></button>
+                <button class="music-track" data-track="4"><span>05</span><b>Coin Parade</b><i>▶</i></button>
+              </div>
+              <label class="music-volume"><span>Music volume</span><input id="music-volume" type="range" min="0" max="100" step="1" value="35" aria-label="Music volume"><output id="music-volume-value" for="music-volume">35%</output></label>
+              <button class="music-stop" id="music-stop" type="button">■ <span>Stop music</span></button>
+            </section>
+          </div>
+          <button class="icon-button" id="sound-toggle" aria-label="Toggle sound effects" title="Toggle sound effects">🔊</button>
           <button class="icon-button" id="vibrant-toggle" aria-label="Toggle vibrant background" title="Toggle vibrant background" aria-pressed="false">✦</button>
           <button class="icon-button" id="theme-toggle" aria-label="Toggle light mode" title="Toggle theme">☼</button>
+          <label class="volume-control" title="Adjust sound volume"><span aria-hidden="true">🔊</span><input id="sound-volume" type="range" min="0" max="100" step="1" value="70" aria-label="Sound volume"><output id="sound-volume-value" for="sound-volume">70%</output></label>
           <button class="profile-button"><span class="profile-avatar">P</span><span>Player</span><span class="profile-chevron">⌄</span></button>
         </div>
         <button class="mobile-menu icon-button" id="mobile-menu" aria-label="Toggle menu">☰</button>
@@ -97,7 +113,7 @@
 
     <div class="game-overlay hidden" id="game-overlay" role="dialog" aria-modal="true" aria-labelledby="game-title">
       <div class="game-shell">
-        <header class="game-topbar"><button class="back-button" id="back-home">← <span>Back to arcade</span></button><div class="game-brand"><span class="brand-icon">G</span><span>game<span>zone</span></span></div><button class="icon-button" id="game-sound" aria-label="Toggle sound">♫</button></header>
+        <header class="game-topbar"><button class="back-button" id="back-home">← <span>Back to arcade</span></button><div class="game-brand"><span class="brand-icon">G</span><span>game<span>zone</span></span></div><button class="icon-button" id="game-sound" aria-label="Toggle sound effects" title="Toggle sound effects">🔊</button></header>
         <div class="game-layout">
           <aside class="game-sidebar"><div class="game-label">NOW PLAYING</div><h1 id="game-title">Game name</h1><p class="game-description" id="game-description"></p><div class="side-divider"></div><div class="score-card"><span>YOUR SCORE</span><strong id="game-score">0</strong><small id="game-best">BEST: 0</small></div><div class="game-controls"><button class="button button-primary control-button" id="restart-game">↻ <span>Restart game</span></button><button class="button button-secondary control-button" id="pause-game">Ⅱ <span>Pause game</span></button></div><div class="instructions"><span class="instruction-icon">ⓘ</span><div><b>How to play</b><p id="game-instructions"></p></div></div><div class="side-tip"><span>✦</span> Have fun &amp; beat your best!</div></aside>
           <section class="play-area"><div class="play-area-top"><span class="playing-pill"><i></i> GAME IN PROGRESS</span><button class="game-favorite" id="game-favorite">♡ <span>Favorite</span></button></div><div class="game-stage" id="game-stage"></div><div class="game-over hidden" id="game-over"><span class="game-over-icon">✦</span><h2 id="game-over-title">Nice play!</h2><p id="game-over-message"></p><button class="button button-primary" id="play-again">Play again <span>↻</span></button></div><div class="pause-overlay hidden" id="pause-overlay"><span>Ⅱ</span><h2>Paused</h2><p>Take your time. Your game is waiting.</p><button class="button button-primary" id="resume-game">Resume game</button></div></section>
@@ -105,6 +121,6 @@
       </div>
     </div>
     <div class="toast" id="toast" role="status"></div>
-    <script src="app.js"></script>
+    <script src="app.js?v=arcade-music"></script>
   </body>
 </html>
