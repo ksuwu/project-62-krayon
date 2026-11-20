@@ -25,6 +25,7 @@
         </nav>
         <div class="top-actions">
           <button class="icon-button" id="sound-toggle" aria-label="Toggle sound" title="Toggle sound">♫</button>
+          <button class="icon-button" id="vibrant-toggle" aria-label="Toggle vibrant background" title="Toggle vibrant background" aria-pressed="false">✦</button>
           <button class="icon-button" id="theme-toggle" aria-label="Toggle light mode" title="Toggle theme">☼</button>
           <button class="profile-button"><span class="profile-avatar">P</span><span>Player</span><span class="profile-chevron">⌄</span></button>
         </div>
@@ -41,7 +42,7 @@
               <a class="button button-primary" href="#games" data-nav="games">Explore games <span>↗</span></a>
               <a class="button button-quiet" href="#leaderboard" data-nav="leaderboard"><span class="trophy">♛</span> View leaderboard</a>
             </div>
-            <div class="hero-note"><span class="avatars"><i>🎮</i><i>🕹️</i><i>👾</i></span><span><b>12 games</b> and counting <span class="note-separator">·</span> Always free to play</span></div>
+            <div class="hero-note"><span class="avatars"><i>🎮</i><i>🕹️</i><i>👾</i></span><span><b id="hero-game-count">20 games</b> and counting <span class="note-separator">·</span> Always free to play</span></div>
           </div>
           <div class="hero-art" aria-label="Colorful arcade game illustration">
             <div class="art-glow"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
@@ -54,7 +55,7 @@
         </section>
 
         <section class="content-width stats-strip" aria-label="Arcade stats">
-          <div class="stat"><span class="stat-icon purple">◈</span><div><strong>12</strong><small>Free games</small></div></div>
+          <div class="stat"><span class="stat-icon purple">◈</span><div><strong id="game-total">20</strong><small>Free games</small></div></div>
           <span class="stat-divider"></span><div class="stat"><span class="stat-icon green">♙</span><div><strong>100%</strong><small>Browser based</small></div></div>
           <span class="stat-divider"></span><div class="stat"><span class="stat-icon orange">♛</span><div><strong id="player-best">0</strong><small>Your top score</small></div></div>
           <span class="stat-divider"></span><div class="stat"><span class="stat-icon blue">♡</span><div><strong id="favorite-count">0</strong><small>Saved favorites</small></div></div>
@@ -66,7 +67,7 @@
             <div class="game-tools"><label class="search-box"><span>⌕</span><input id="game-search" type="search" placeholder="Search games..." autocomplete="off" /><kbd>⌘ K</kbd></label><button class="text-link" id="view-all">View all games <span>→</span></button></div>
           </div>
           <div class="filter-row" id="categories">
-            <div class="filter-tabs" role="group" aria-label="Filter games"><button class="filter-tab active" data-filter="All">All games <span>12</span></button><button class="filter-tab" data-filter="Arcade">Arcade</button><button class="filter-tab" data-filter="Puzzle">Puzzle</button><button class="filter-tab" data-filter="Strategy">Strategy</button><button class="filter-tab" data-filter="Casual">Casual</button></div>
+            <div class="filter-tabs" role="group" aria-label="Filter games"><button class="filter-tab active" data-filter="All">All games <span id="all-games-count">20</span></button><button class="filter-tab" data-filter="Arcade">Arcade</button><button class="filter-tab" data-filter="Puzzle">Puzzle</button><button class="filter-tab" data-filter="Strategy">Strategy</button><button class="filter-tab" data-filter="Casual">Casual</button></div>
             <button class="favorites-filter" id="favorites-filter">♡ <span>Favorites</span></button>
           </div>
           <div class="games-grid" id="games-grid"></div>
