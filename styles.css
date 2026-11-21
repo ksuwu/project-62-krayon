@@ -54,6 +54,26 @@ body[data-vibrant="true"] .game-card{box-shadow:0 10px 30px #9f62cf22}
 .music-volume output{width:30px;color:#b9b2c9;font-size:9px;text-align:right;font-variant-numeric:tabular-nums}
 .music-stop{display:block;width:100%;margin-top:10px;padding:7px;border:1px solid #39334e;border-radius:8px;background:#201e2b;color:#c9c5d5;font-size:10px}
 .music-stop:hover{border-color:#7b5cae;color:#fff}
+.different-music-player{position:relative}
+.different-music-panel{position:absolute;z-index:40;top:calc(100% + 12px);right:0;width:min(270px,calc(100vw - 20px));padding:14px;border:1px solid #3c4b67;border-radius:14px;background:#141722;box-shadow:0 16px 42px #0009;color:#f1effa}
+.different-music-panel.hidden{display:none}
+.different-music-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.different-music-heading b,.different-music-heading small{display:block}
+.different-music-heading b{font:600 14px var(--display)}
+.different-music-heading small{margin-top:3px;color:#a6a1b6;font-size:10px}
+.different-music-close{width:24px;height:24px;padding:0;border:0;border-radius:7px;background:#252d3d;color:#c9c4d8;font-size:19px;line-height:1}
+.different-music-track-list{display:grid;gap:4px}
+.different-music-track{display:grid;grid-template-columns:24px 1fr 22px;align-items:center;gap:8px;width:100%;padding:8px;border:1px solid transparent;border-radius:8px;background:transparent;color:#c9c5d5;text-align:left}
+.different-music-track:hover,.different-music-track.is-playing{border-color:#4e86ac;background:#1d3044;color:#fff}
+.different-music-track>span{color:#9189a6;font-size:9px;font-variant-numeric:tabular-nums}
+.different-music-track>b{font-size:11px;font-weight:600}
+.different-music-track>i{color:#78c5e8;font-size:11px;font-style:normal;text-align:center}
+.different-music-volume{display:flex;align-items:center;gap:8px;margin-top:12px;color:#c5c1d1;font-size:10px}
+.different-music-volume>span{white-space:nowrap}
+.different-music-volume input{width:100%;height:4px;accent-color:#67b7db;cursor:pointer}
+.different-music-volume output{width:30px;color:#b9b2c9;font-size:9px;text-align:right;font-variant-numeric:tabular-nums}
+.different-music-stop{display:block;width:100%;margin-top:10px;padding:7px;border:1px solid #3c4b67;border-radius:8px;background:#1d2230;color:#c9c5d5;font-size:10px}
+.different-music-stop:hover{border-color:#67aeca;color:#fff}
 .light .music-panel{border-color:#ded6ef;background:#fff;color:#2d293b;box-shadow:0 16px 42px #2816472b}
 .light .music-panel-heading small,.light .music-volume,.light .music-volume output{color:#706a80}
 .light .music-track{color:#534c65}
